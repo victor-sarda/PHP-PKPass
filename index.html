@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>PHP PKPass by tschoffelen</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>PHP PKPass</h1>
+        <p>A PHP class for creating a Pass for Passbook in iOS 6. Automatically creates the manifest.json file, signs the pass and deploys it as a .pkpass file.</p>
+
+        <p class="view"><a href="https://github.com/tschoffelen/PHP-PKPass">View the Project on GitHub <small>tschoffelen/PHP-PKPass</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/tschoffelen/PHP-PKPass/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/tschoffelen/PHP-PKPass/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/tschoffelen/PHP-PKPass">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>PHP PKPass class for iOS 6 Passbook</h1>
+
+<p>This class provides the functionality to create an Pass for Passbook in Apple's iOS 6 and newer on-the-fly. It creates, signs and packages the Pass as a .pkpass file according to Apple's documentation.</p>
+
+<p>Please also take a look at <a href="https://github.com/tschoffelen/PHP-Passkit">my repository PHP-Passkit</a>, which includes the PKTemplate and PKValidate classes, to easily manage templates and validate pass files.</p>
+
+<h2>Requirements</h2>
+
+<ul>
+<li>PHP 5</li>
+<li>PHP <a href="http://php.net/manual/en/book.zip.php">ZIP Support</a> (May be installed by default)</li>
+<li>Access to filesystem (Script must be able to create temporary folders)</li>
+</ul><h2>Usage</h2>
+
+<p>Please take a look at the example.php file for example usage. For more info on the JSON for the pass and how to style it, take a look at the <a href="https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/Introduction.html">docs at developers.apple.com</a>.</p>
+
+<p>A live demo of the full sample can be found on <a href="http://www.tomttb.com/test/pass/full_sample">http://www.tomttb.com/test/pass/full_sample</a> (Sorry, outdated at the moment...).</p>
+
+<h3>Requesting the Pass Certificate</h3>
+
+<ol>
+<li>Go to the <a href="https://developer.apple.com/ios/manage/passtypeids/ios/manage">iOS Provisioning portal</a>
+</li>
+<li>Create a new Pass Type ID</li>
+<li>Request the certificate like shown</li>
+<li>Download the .cer file and drag it into Keychain Access</li>
+<li>Right click the certificate in Keychain Access and choose <code>Export 'pass.&lt;id&gt;'…</code>
+</li>
+<li>Choose a password and export the file to a folder</li>
+</ol><h3>Getting the example.php sample to work</h3>
+
+<ol>
+<li>Request the Pass certificate (<code>.p12</code>) and upload it to your server</li>
+<li>Set the correct path and password on <a href="https://github.com/tschoffelen/PHP-PKPass/blob/master/example.php#L6">line 6 and 7</a>
+</li>
+<li>Download and import your <a href="https://developer.apple.com/certificationauthority/AppleWWDRCA.cer">WWDR Intermediate certificate</a> to Keychain, export as <code>.pem</code> and set the correct path on <a href="https://github.com/tschoffelen/PHP-PKPass/blob/master/example.php#L8">line 8</a>
+</li>
+<li>Change the <code>passTypeIdentifier</code> and <code>teamIndentifier</code> to the correct values, which can be found on the <a href="https://developer.apple.com/ios/manage/passtypeids/ios/manage">iOS Provisioning portal</a> after clicking on 'Configure' next to the Pass ID, on line <a href="https://github.com/tschoffelen/PHP-PKPass/blob/master/example.php#L10">11</a> and <a href="https://github.com/tschoffelen/PHP-PKPass/blob/master/example.php#L14">15</a>
+</li>
+</ol><p>After completing these steps, you should be ready to go. Upload all the files to your server and navigate to the address of the example.php file on your iPhone.</p>
+
+<h2>Support</h2>
+
+<p>For info, mail me at <a href="mailto:tom@tomttb.com">tom@tomttb.com</a> or tweet me <a href="http://www.twitter.com/tschoffelen">@tschoffelen</a>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/tschoffelen">tschoffelen</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
